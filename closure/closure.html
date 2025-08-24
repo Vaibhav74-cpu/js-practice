@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+  </body>
+  <script>
+
+    //lexical scoping
+    function outer() {
+      let username = "vaibav";
+      return  function inner(){
+       
+        console.log("inner", username);
+      }
+
+     return function inner2(){
+        console.log("secret" , screct);
+        
+      }
+      
+    }
+
+    const myFunc = new outer()
+    console.log(myFunc.inner());
+    
+
+//closure
+function clickHandle(color){
+
+        return function(){ // it return all lexical scope to the clickhandle
+            document.body.style.backgroundColor = `${color}`
+        }
+}
+
+document.getElementById('orange').onclick = clickHandle('orange')// here is instead of given function is run the function directly
+document.getElementById('green').onclick = clickHandle('green')
+
+  </script>
+</html>

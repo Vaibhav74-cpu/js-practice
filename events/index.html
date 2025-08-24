@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img src="../events/images/house1.png" alt="house" id="house1" height="170px" width="250px"></li>
+        <li><img src="../events/images/house2.png" alt="" id="house2" height="170px" width="250px"></li>
+        <li><img src="../events/images/house3.png" alt="" id="house3" height="170px" width="250px"></li>
+        <li><img src="../events/images/house4.png" alt="" id="house4" height="170px" width="250px"></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('house1').onclick = function(){
+    //     alert('welcome')
+    // }
+
+    document.getElementById('house1').addEventListener('click', function(e){
+        // alert('welcome back')
+        // console.log(e)
+    },false) // default value is false
+
+    document.getElementById('images').addEventListener('click', function(e){
+        // console.log('clicked inside the ul')
+    }, false)
+
+    document.getElementById('house2').addEventListener('click', function(e){
+        // console.log('click on the house2')
+        e.stopPropagation()
+    }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+    
+     
+      if (e.target.tagName === 'IMG') {
+        let item= e.target.parentNode
+        item.remove()
+      }
+
+
+
+    //   clear.parentNode.removeChild(clear)
+        97
+    })
+
+</script>
+</html>
+
+
+<!-- \
+Note 
+propagation
+capturing:  (true) = from outside to inside
+public :( false)= from inside to outside
+-->

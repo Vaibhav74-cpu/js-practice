@@ -1,0 +1,11 @@
+
+const banner=document.querySelector('#banner')
+const clock =document.querySelector('#clock')
+
+
+setInterval(function(){
+    const date = new Date()
+    // console.log(date);
+    // clock.innerHTML = date.toLocaleString()
+    
+}, 1000)

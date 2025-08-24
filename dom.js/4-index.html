@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="langName">
+        <li>js</li>
+    </ul>
+</body>
+<script>
+    function addlang(langName){
+        const li=document.createElement('li')
+        // console.log(li)
+        li.innerHTML = `${langName}`
+        // const addtext=document.createTextNode('python');
+        // li.appendChild(addtext)
+        document.querySelector('.langName').appendChild(li)
+    }
+    addlang('python')
+
+
+    function addopti(langName){
+        const li=document.createElement('li')
+        console.log(li);
+        // const addtext=document.createTextNode('python')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.langName').appendChild(li)
+    }
+    addopti('golanf')
+
+    //EDIT
+    const secLi=document.querySelector('li:nth-child(2)')
+    const li =document.createElement('li')
+    li.textContent = 'java'
+    secLi.replaceWith(li)
+    
+    const first = document.querySelector('li:nth-child(1)')
+    const li1 = document.createElement('li')
+    li1.textContent = 'css'
+    first.replaceWith(li1)
+
+
+    //remove
+    const lastrem=document.querySelector('li:last-child')
+    lastrem.remove()
+</script>
+</html>
